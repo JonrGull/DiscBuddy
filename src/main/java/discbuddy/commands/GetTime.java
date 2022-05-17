@@ -17,17 +17,18 @@ public class GetTime extends ListenerAdapter {
             MessageChannel channel = event.getChannel();
             DateTime dt = new DateTime();
             LocalDate date = LocalDate.now();
+            String user = event.getAuthor().getAsMention();
 
-            String currentTime = "The time is: " + (dt.toString("HH:mm:ss"));
+            String currentTime = ", the time is: " + (dt.toString("HH:mm:ss"));
             String currentDate = ("\n" + " Today's date is: " + date.toString("MM/dd/yyyy"));
 
             if (dt.getHourOfDay() < 12) {
-                channel.sendMessage("Good morning!☀️ "  + currentTime + currentDate)
+                channel.sendMessage("Good morning!☀️ " + user + currentTime + currentDate)
                         .queue();
             } else if (dt.getHourOfDay() < 18) {
-                channel.sendMessage("Good afternoon! ⛱️ " + currentTime + currentDate).queue();
+                channel.sendMessage("Good afternoon! ⛱️ " + user + currentTime + currentDate).queue();
             } else {
-                channel.sendMessage("Good evening! 🌕 " + currentTime).queue();
+                channel.sendMessage("Good evening! 🌕 " + user + currentTime).queue();
             }
         }
     }
