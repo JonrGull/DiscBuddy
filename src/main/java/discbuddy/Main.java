@@ -2,7 +2,8 @@ package discbuddy;
 
 import javax.security.auth.login.LoginException;
 
-import discbuddy.commands.getTime;
+import discbuddy.commands.GetNASAPhoto;
+import discbuddy.commands.GetTime;
 import io.github.cdimascio.dotenv.Dotenv;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -18,7 +19,8 @@ public class Main {
                 .setActivity(Activity.playing("Virtual Studio Code"))
                 .build();
 
-        bot.addEventListener(new getTime());
+        bot.addEventListener(new GetTime());
+        bot.addEventListener(new GetNASAPhoto());
 
         bot.awaitReady();
 
