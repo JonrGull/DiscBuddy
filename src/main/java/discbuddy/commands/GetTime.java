@@ -19,8 +19,8 @@ public class GetTime extends ListenerAdapter {
             LocalDate date = LocalDate.now();
             String user = event.getAuthor().getAsMention();
 
-            String currentTime = ", the time is: " + (dt.toString("HH:mm:ss"));
             String currentDate = ("\n" + " Today's date is: " + date.toString("MM/dd/yyyy"));
+            String currentTime = ", the time is: " + (dt.toString("HH:mm:ss"));
 
             if (dt.getHourOfDay() < 12) {
                 channel.sendMessage("Good morning!☀️ " + user + currentTime + currentDate)
