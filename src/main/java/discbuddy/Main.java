@@ -2,7 +2,7 @@ package discbuddy;
 
 import javax.security.auth.login.LoginException;
 
-import discbuddy.commands.pingPong;
+import discbuddy.commands.getTime;
 import io.github.cdimascio.dotenv.Dotenv;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -18,7 +18,7 @@ public class Main {
                 .setActivity(Activity.playing("Virtual Studio Code"))
                 .build();
 
-        bot.addEventListener(new pingPong());
+        bot.addEventListener(new getTime());
 
         bot.awaitReady();
 
