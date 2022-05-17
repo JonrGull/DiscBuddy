@@ -1,14 +1,20 @@
 package discbuddy;
 
-public class Bot extends ListenerAdapter {
-    public static void main(String[] args) {
-        sayGreeting("Jon");
-    }
+import javax.security.auth.login.LoginException;
 
-    public static void sayGreeting(String name) {
-        System.out.println("Hello, " + name + "!");
+import io.github.cdimascio.dotenv.Dotenv;
+import net.dv8tion.jda.api.JDA;
+import net.dv8tion.jda.api.JDABuilder;
+import net.dv8tion.jda.api.entities.Activity;
+
+public class Bot {
+    public static void main(String[] args) throws LoginException {
+
+        Dotenv dotenv = Dotenv.load();
+
+        JDA bot = JDABuilder.createDefault(dotenv.get("DISCBUDDY_KEY"))
+                .setActivity(Activity.playing("Virtual Studio Code"))
+                .build();
+
     }
 }
-
-
-
