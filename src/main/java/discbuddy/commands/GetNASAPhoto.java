@@ -43,8 +43,7 @@ public class GetNASAPhoto extends ListenerAdapter {
 
                 response = client.send(request, HttpResponse.BodyHandlers.ofString());
                 ObjectMapper mapper = new ObjectMapper();
-                List<Photo> posts = mapper.readValue(response.body(), new TypeReference<List<Photo>>() {
-                });
+                List<Photo> posts = mapper.readValue(response.body(), new TypeReference<List<Photo>>() {});
 
                 channel.sendMessage("Here's a sweet photo of space!: " + posts.get(0).getHdurl()).queue();
 
@@ -57,5 +56,4 @@ public class GetNASAPhoto extends ListenerAdapter {
         }
 
     }
-
 }
