@@ -2,6 +2,7 @@ package discbuddy;
 
 import javax.security.auth.login.LoginException;
 
+import discbuddy.commands.Cats;
 import discbuddy.commands.GetHelp;
 import discbuddy.commands.GetNASAPhoto;
 import discbuddy.commands.GetTime;
@@ -24,6 +25,7 @@ public class Main {
         bot.addEventListener(new GetHelp());
         bot.addEventListener(new GetTime());
         bot.addEventListener(new GetNASAPhoto());
+        bot.addEventListener(new Cats());
 
     }
 }
