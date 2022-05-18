@@ -11,6 +11,7 @@ import java.util.List;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import discbuddy.commands.utils.Photo;
 import io.github.cdimascio.dotenv.Dotenv;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.MessageChannel;
@@ -42,7 +43,7 @@ public class GetNASAPhoto extends ListenerAdapter {
 
                 response = client.send(request, HttpResponse.BodyHandlers.ofString());
                 ObjectMapper mapper = new ObjectMapper();
-                List<Photos> posts = mapper.readValue(response.body(), new TypeReference<List<Photos>>() {
+                List<Photo> posts = mapper.readValue(response.body(), new TypeReference<List<Photo>>() {
                 });
 
                 channel.sendMessage("Here's a sweet photo of space!: " + posts.get(0).getHdurl()).queue();

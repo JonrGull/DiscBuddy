@@ -1,10 +1,10 @@
-package discbuddy.commands;
+package discbuddy.commands.utils;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 
-public class Photos {
+public class Photo {
 
     private String hdurl;
 
