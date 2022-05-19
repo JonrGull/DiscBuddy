@@ -6,6 +6,8 @@ import discbuddy.commands.Cats;
 import discbuddy.commands.GetHelp;
 import discbuddy.commands.GetNASAPhoto;
 import discbuddy.commands.GetTime;
+import discbuddy.commands.KickUser;
+import discbuddy.commands.ManageDataBase;
 import io.github.cdimascio.dotenv.Dotenv;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;

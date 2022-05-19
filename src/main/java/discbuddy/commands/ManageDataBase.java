@@ -1,4 +1,4 @@
-package discbuddy;
+package discbuddy.commands;
 
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
