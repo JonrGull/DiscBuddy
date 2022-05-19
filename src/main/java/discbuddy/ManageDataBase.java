@@ -6,7 +6,10 @@ import com.mongodb.ServerApi;
 import com.mongodb.ServerApiVersion;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+
+import org.bson.Document;
 
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.MessageChannel;
@@ -26,15 +29,47 @@ public class ManageDataBase extends ListenerAdapter {
                     .build())
             .build();
     MongoClient mongoClient = MongoClients.create(settings);
-    MongoDatabase database = mongoClient.getDatabase(DB_NAME);
+    MongoDatabase db = mongoClient.getDatabase(DB_NAME);
+    MongoCollection<Document> items = db.getCollection("users");
 
+    @Override
     public void onMessageReceived(MessageReceivedEvent event) {
-        ManageDataBase db = new ManageDataBase();
-
         Message msg = event.getMessage();
-        if (msg.getContentRaw().equals("!users")) {
+        String userId = event.getAuthor().getId();
+        Document user = new Document("userId", userId);
+
+        if (msg.getContentRaw().equals("!register")) {
             MessageChannel channel = event.getChannel();
-            channel.sendMessage(db.database.getCollection(DB_NAME).find().first().toString()).queue();
+
+            if (items.find(user).first() == null) {
+                items.insertOne(user);
+                channel.sendMessage("You have been registered!").queue();
+            } else {
+                channel.sendMessage("Hang on there, you are already registered!").queue();
+            }
+
+        }
+
+        if (msg.getContentRaw().equals("!unregister")) {
+            MessageChannel channel = event.getChannel();
+
+            if (items.find(user).first() != null) {
+                items.deleteOne(user);
+                channel.sendMessage("You have been unregistered!").queue();
+            } else {
+                channel.sendMessage("Who are you? Did you register yet?").queue();
+            }
+
+        }
+
+        if (msg.getContentRaw().equals("!check")) {
+            MessageChannel channel = event.getChannel();
+
+            if (items.find(user).first() != null) {
+                channel.sendMessage("Wooo! You are registered!").queue();
+            } else {
+                channel.sendMessage("You are not registered yet!").queue();
+            }
 
         }
 
