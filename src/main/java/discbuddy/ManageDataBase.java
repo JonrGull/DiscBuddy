@@ -11,6 +11,7 @@ import com.mongodb.client.MongoDatabase;
 
 import org.bson.Document;
 
+import io.github.cdimascio.dotenv.Dotenv;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.MessageChannel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
@@ -18,10 +19,12 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 public class ManageDataBase extends ListenerAdapter {
 
+    Dotenv dotenv = Dotenv.load();
+    String DB_URL = dotenv.get("DB_URL");
+
     private static final String DB_NAME = "users";
 
-    ConnectionString connectionString = new ConnectionString(
-            "mongodb+srv://jonrgull:q8bcrH7K9Lkxet49@cluster0.s9fqw.mongodb.net/?retryWrites=true&w=majority");
+    ConnectionString connectionString = new ConnectionString(DB_URL);
     MongoClientSettings settings = MongoClientSettings.builder()
             .applyConnectionString(connectionString)
             .serverApi(ServerApi.builder()
