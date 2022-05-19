@@ -17,7 +17,40 @@ public class KickUser extends ListenerAdapter {
             channel.sendMessage("No, " + user + "! This bot is awesome!").queue();
 
             try {
-                Thread.sleep(3000);
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            channel.sendMessage("**Shining my boot**").queue();
+
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            channel.sendMessage("3").queue();
+
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+
+            }
+
+            channel.sendMessage("2").queue();
+
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            channel.sendMessage("1").queue();
+
+            try {
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
