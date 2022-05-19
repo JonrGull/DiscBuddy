@@ -15,6 +15,13 @@ public class KickUser extends ListenerAdapter {
         if (msg.getContentRaw().equals("This bot sucks")) {
             MessageChannel channel = event.getChannel();
             channel.sendMessage("No, " + user + "! This bot is awesome!").queue();
+
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
             event.getGuild().kick(event.getMember()).queue();
             channel.sendMessage(user + " has been kicked from the server!").queue();
         }
