@@ -12,7 +12,6 @@ Since I will not be able to keep this bot online 24/7, I have no problem with it
 DISCBUDDY_KEY=<your_key>
 NASA_KEY=<your_key>
 CAT_KEY=<your_key>
-
 ```
 
 ### Commands
