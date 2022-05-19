@@ -8,7 +8,12 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoDatabase;
 
-public class ManageDataBase {
+import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.entities.MessageChannel;
+import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.hooks.ListenerAdapter;
+
+public class ManageDataBase extends ListenerAdapter {
 
     private static final String DB_NAME = "users";
 
@@ -23,11 +28,16 @@ public class ManageDataBase {
     MongoClient mongoClient = MongoClients.create(settings);
     MongoDatabase database = mongoClient.getDatabase(DB_NAME);
 
-    public static void main(String[] args) {
+    public void onMessageReceived(MessageReceivedEvent event) {
         ManageDataBase db = new ManageDataBase();
 
-        // count documents in users db
-        System.out.println(db.database.getCollection("users").countDocuments());
+        Message msg = event.getMessage();
+        if (msg.getContentRaw().equals("!users")) {
+            MessageChannel channel = event.getChannel();
+            channel.sendMessage(db.database.getCollection(DB_NAME).find().first().toString()).queue();
+
+        }
+
     }
 
 }
