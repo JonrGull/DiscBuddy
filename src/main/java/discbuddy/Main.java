@@ -22,6 +22,10 @@ public class Main {
                 .build()
                 .awaitReady();
 
+        bot.getTextChannelsByName("general", true).get(0).sendMessage(
+                "My name is **DiscBuddy**! Thank you for adding me. Type **!help** for my list of commands!")
+                .queue();
+
         bot.addEventListener(new GetHelp());
         bot.addEventListener(new GetTime());
         bot.addEventListener(new GetNASAPhoto());

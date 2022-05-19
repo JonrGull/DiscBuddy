@@ -16,7 +16,8 @@ public class GetHelp extends ListenerAdapter {
             channel.sendMessage("No shame in asking for help! Here is what I can do for you: \n"
                     + "`!time` - returns the current time \n"
                     + "`!nasa` - returns a picture of the day from NASA \n"
-                    + "`!help` - returns this message").queue();
+                    + "`!help` - returns this message")
+                    .queue();
 
         }
     }
