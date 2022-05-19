@@ -17,6 +17,7 @@ public class GetHelp extends ListenerAdapter {
                     + "`!register` - registers you to the database \n"
                     + "`!unregister` - unregisters you from the database \n"
                     + "`!check` - checks if you are in the database \n"
+                    + "`!list` - lists all users in the database \n"
                     + "`!time` - returns the current time \n"
                     + "`!nasa` - returns a picture of the day from NASA \n"
                     + "`!help` - returns this message")

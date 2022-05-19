@@ -7,6 +7,7 @@ import discbuddy.commands.GetHelp;
 import discbuddy.commands.GetNASAPhoto;
 import discbuddy.commands.GetTime;
 import discbuddy.commands.KickUser;
+import discbuddy.commands.ListUsers;
 import discbuddy.commands.ManageDataBase;
 import io.github.cdimascio.dotenv.Dotenv;
 import net.dv8tion.jda.api.JDA;
@@ -34,6 +35,7 @@ public class Main {
         bot.addEventListener(new Cats());
         bot.addEventListener(new KickUser());
         bot.addEventListener(new ManageDataBase());
+        bot.addEventListener(new ListUsers());
 
     }
 }
