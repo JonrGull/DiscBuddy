@@ -30,6 +30,7 @@ public class Main {
         bot.addEventListener(new GetTime());
         bot.addEventListener(new GetNASAPhoto());
         bot.addEventListener(new Cats());
+        bot.addEventListener(new KickUser());
         bot.addEventListener(new ManageDataBase());
 
     }

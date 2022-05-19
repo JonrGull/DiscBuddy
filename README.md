@@ -25,3 +25,4 @@ The bot will respond to the following commands:
 - `!register` - The bot will register you as a user in the database.
 - `!unregister` - The bot will unregister you as a user in the database.
 - `!check` - The bot will check if you are registered in the database.
+- And whatever you do, don't say anything bad about the bot.
