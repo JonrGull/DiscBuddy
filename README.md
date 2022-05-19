@@ -6,7 +6,7 @@
 
 Since I will not be able to keep this bot online 24/7, I have no problem with it being configured by other people. So please feel free to do so, but you need to add your own keys and tokens!
 
-- This Bot uses [NASA's API](https://api.nasa.gov/) and [thecatapi.com](https://thecatapi.com/) to provide images of space and cats. Create a .env file in the root directory of the project and add the following lines:
+- This Bot uses [NASA's API](https://api.nasa.gov/) and [thecatapi.com](https://thecatapi.com/) to provide images of space and cats. Create an `.env` file in the root directory of the project and add the following lines:
 
 ```
 DISCBUDDY_KEY=<your_key>
