@@ -31,5 +31,7 @@ public class Main {
         bot.addEventListener(new GetNASAPhoto());
         bot.addEventListener(new Cats());
 
+        
+
     }
 }
