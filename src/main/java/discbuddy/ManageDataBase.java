@@ -10,7 +10,7 @@ import com.mongodb.client.MongoDatabase;
 
 public class ManageDataBase {
 
-    private static final String DB_NAME = "discbuddy";
+    private static final String DB_NAME = "users";
 
     ConnectionString connectionString = new ConnectionString(
             "mongodb+srv://jonrgull:q8bcrH7K9Lkxet49@cluster0.s9fqw.mongodb.net/?retryWrites=true&w=majority");
@@ -22,10 +22,12 @@ public class ManageDataBase {
             .build();
     MongoClient mongoClient = MongoClients.create(settings);
     MongoDatabase database = mongoClient.getDatabase(DB_NAME);
-    
 
+    public static void main(String[] args) {
+        ManageDataBase db = new ManageDataBase();
 
-
+        // count documents in users db
+        System.out.println(db.database.getCollection("users").countDocuments());
+    }
 
 }
-//
