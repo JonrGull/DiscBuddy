@@ -22,3 +22,6 @@ The bot will respond to the following commands:
 - `!time` - Displays the current time and date in the server.
 - `!space` - Displays a random image of space.
 - `cat` - The bot listens for the word 'cat' (and other similar words!) and responds with a random gif of a cat.
+- `!register` - The bot will register you as a user in the database.
+- `!unregister` - The bot will unregister you as a user in the database.
+- `!check` - The bot will check if you are registered in the database.
