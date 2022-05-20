@@ -16,43 +16,13 @@ public class KickUser extends ListenerAdapter {
             MessageChannel channel = event.getChannel();
             channel.sendMessage("No, " + user + "! This bot is awesome!").queue();
 
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-
-            channel.sendMessage("**Shining my boot**").queue();
-
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-
-            channel.sendMessage("3").queue();
-
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-
-            }
-
-            channel.sendMessage("2").queue();
-
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-
-            channel.sendMessage("1").queue();
-
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            for (int i = 5; i > 0; i--) {
+                channel.sendMessage("Shining my boot... " + i).queue();
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
 
             event.getGuild().kick(event.getMember()).queue();
