@@ -1,6 +1,6 @@
 ## Welcome to DiscBuddy, a fun little bot that will try to brighten up your day.
 
-### Created using Java and JDA[https://github.com/DV8FromTheWorld/JDA]
+### Created using Java and [JDA](https://github.com/DV8FromTheWorld/JDA)
 
 ### Configuration
 
