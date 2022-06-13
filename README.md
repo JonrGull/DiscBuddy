@@ -13,6 +13,10 @@ DISCBUDDY_KEY=<your_key>
 NASA_KEY=<your_key>
 CAT_KEY=<your_key>
 ```
+### Install
+
+Go to this link to add DiscBuddy to your Discord server
+https://discord.com/api/oauth2/authorize?client_id=975915701476917288&permissions=8&scope=bot
 
 ### Commands
 
